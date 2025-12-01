@@ -1,0 +1,507 @@
+:root {
+  --bg: #050505;
+  --fg: #f9f9f9;
+  --accent: #ff3b7f;
+  --accent-2: #00ffd0;
+  --border: #f9f9f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at top, #212121 0%, #050505 55%, #000 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 920px;
+  padding: 1.25rem 1rem 2.5rem;
+}
+
+/* ================== HEADER ================== */
+
+header {
+  border: 3px solid var(--border);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.2rem;
+  background: #050505;
+  box-shadow: 6px 6px 0 var(--accent);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "ADVENT//LOVE";
+  position: absolute;
+  right: -2rem;
+  bottom: -0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  opacity: 0.18;
+  transform: rotate(-7deg);
+}
+
+h1 {
+  font-family: "Courier New", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Lucida Console", monospace;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+h1 .tag {
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--fg);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.status-bar {
+  margin-top: 0.7rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  opacity: 0.8;
+}
+
+.status-pill {
+  border: 1px solid var(--fg);
+  padding: 0.2rem 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 0.35rem var(--accent-2);
+}
+
+/* ================== CALENDAR ================== */
+
+.calendar-frame {
+  border: 3px solid var(--border);
+  padding: 0.8rem;
+  background: rgba(5, 5, 5, 0.96);
+  box-shadow: 6px 6px 0 var(--accent-2);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.calendar-title {
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.calendar-meta {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.calendar-grid {
+  display: grid;
+  width: 100%;
+  margin: 0.75rem auto 0;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(80px, 96px);
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .calendar-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(90px, 110px);
+  }
+}
+
+@media (min-width: 900px) {
+  .calendar-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.footer-note {
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+  text-align: right;
+}
+
+/* ================== DOORS ================== */
+
+.door {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+}
+
+.door:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Outer border / grid look */
+.door-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(249, 249, 249, 0.9);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7);
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 4px,
+    rgba(255, 255, 255, 0.02) 4px,
+    rgba(255, 255, 255, 0.02) 8px
+  );
+  overflow: hidden;
+}
+
+/* Panel that holds front/back faces */
+.door-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* back = shows when door is open */
+.door-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #ffd93b;
+  background: radial-gradient(circle at top, #333 0%, #111 60%, #000 100%);
+}
+
+/* front = sliding panel with the number */
+.door-front {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e6375a;
+  color: #fff;
+  font-family: "Courier New", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  transform: translateX(0);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.door-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset -4px 0 0 rgba(0, 0, 0, 0.4);
+  opacity: 0.7;
+}
+
+.door-number {
+  transform: translateX(-3px);
+}
+
+/* Locked state: darker front, no shake */
+.door--locked .door-front {
+  background: #444;
+  cursor: not-allowed;
+}
+
+/* Today: rock / shake animation so she notices it */
+@keyframes doorRock {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-3px) rotate(-3deg);
+  }
+  50% {
+    transform: translateX(3px) rotate(3deg);
+  }
+  75% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.door--today .door-panel {
+  animation: doorRock 0.8s ease-in-out infinite;
+}
+
+/* When opened: slide the front panel off left */
+.door--open .door-front {
+  transform: translateX(-110%);
+}
+
+/* Once open, stop the rocking */
+.door--open .door-panel {
+  animation: none;
+}
+
+/* Small press feedback */
+.door:not(.door--locked):active .door-front {
+  transform: translateX(-4px);
+}
+
+/* ================== MODAL ================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 20;
+}
+
+.modal-backdrop.is-open {
+  display: flex;
+}
+
+.modal {
+  background: #050505;
+  border: 3px solid var(--border);
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 8px 8px 0 var(--accent);
+  position: relative;
+  animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-header {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.modal-day {
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.modal-title {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.modal-close {
+  border: 2px solid var(--border);
+  background: #050505;
+  color: var(--fg);
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  font-family: "Courier New", ui-monospace, monospace;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: var(--fg);
+  color: #050505;
+}
+
+.modal-body {
+  padding: 0.9rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.modal-note {
+  margin-bottom: 0.7rem;
+  padding: 0.5rem 0.6rem;
+  border-left: 3px solid var(--accent);
+  background: #101010;
+}
+
+.embed-wrapper {
+  margin-top: 0.5rem;
+  border: 2px solid var(--border);
+  background: #000;
+  padding: 0.5rem;
+}
+
+.embed-wrapper iframe,
+.embed-wrapper img,
+.embed-wrapper audio {
+  width: 100%;
+  border: none;
+}
+
+.embed-wrapper img {
+  display: block;
+  height: auto;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid var(--border);
+  text-decoration: none;
+  color: var(--fg);
+  font-family: "Courier New", ui-monospace, monospace;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.modal-link span {
+  font-size: 0.9rem;
+}
+
+.modal-link:hover {
+  background: var(--fg);
+  color: #050505;
+}
+
+.modal-empty {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Modal in animation */
+
+@keyframes modalIn {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================== CONFETTI ================== */
+
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10vh;
+  width: 8px;
+  height: 14px;
+  opacity: 0;
+  border-radius: 1px;
+  animation-name: confettiFall, confettiSpin;
+  animation-timing-function: linear, ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.confetti-piece.color-1 {
+  background: var(--accent);
+}
+
+.confetti-piece.color-2 {
+  background: var(--accent-2);
+}
+
+.confetti-piece.color-3 {
+  background: #ffd93b;
+}
+
+.confetti-piece.color-4 {
+  background: #ffffff;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+@keyframes confettiSpin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(720deg);
+  }
+}
+
+/* ================== REDUCED MOTION ================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

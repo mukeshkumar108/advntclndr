@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Us Two // Advent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>
+        US TWO
+        <span class="tag">REMOTE ADVENT</span>
+      </h1>
+      <p class="subtitle">
+        One tiny surprise every day. No peeking at future days. ✋
+      </p>
+      <div class="status-bar" aria-live="polite">
+        <span class="status-pill">
+          <span class="status-dot"></span>
+          SYNC: ONLINE
+        </span>
+        <span class="status-pill" id="todayLabel">
+          LOADING DATE…
+        </span>
+      </div>
+    </header>
+
+    <section class="calendar-frame" aria-label="Advent calendar">
+      <div class="calendar-header">
+        <div class="calendar-title">DECEMBER LOVE CALENDAR</div>
+        <div class="calendar-meta" id="calendarMeta"></div>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <p class="footer-note">
+        tip: open today’s door together on a call.
+      </p>
+    </section>
+  </main>
+
+  <!-- Modal for the “gift” -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalDayLabel">
+      <div class="modal-header">
+        <div>
+          <div class="modal-day" id="modalDayLabel"></div>
+          <div class="modal-title" id="modalTitle"></div>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" type="button">
+          Close ✕
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Confetti layer -->
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
