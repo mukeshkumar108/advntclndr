@@ -42,12 +42,13 @@ const DOORS = [
     embedUrl: "https://www.youtube.com/embed/EXTLJmYsaUQ"
   },
   {
-    day: 3,
-    type: "image",
-    title: "Us, but in pixels",
-    note: "Replace this with a real photo or meme that’s just for us.",
-    src: "https://placekitten.com/800/500",
-    alt: "Cute placeholder kitten – replace with your photo."
+  day: 3,
+    type: "video",
+    title: "A tiny piece of us 🎬",
+    note:
+      "I want a whole lifetime of adventure with you… and a million more moments like these. " +
+      "Press play — I hope it makes you smile, even for a second.",
+    src: "assets/day-3.mp4"
   },
   {
     day: 4,

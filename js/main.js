@@ -258,6 +258,15 @@ function createContentElement(data) {
       wrapper.appendChild(pre);
       return wrapper;
     }
+    case "video": {
+      if (!data.src) return null;
+      const video = document.createElement("video");
+      video.controls = true;
+      video.style.width = "100%";
+      video.src = data.src;
+      wrapper.appendChild(video);
+      return wrapper;
+    }
     default:
       return null;
   }
