@@ -52,10 +52,12 @@ const DOORS = [
   },
   {
     day: 4,
-    type: "audio",
-    title: "Voice note from the future",
-    note: "Record something cute, upload it somewhere, and paste the file URL here.",
-    src: "https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav"
+    type: "video",
+    title: "Your tiny chaos gremlin 💙",
+    note:
+      "He was running around causing absolute chaos today… and he INSISTED on delivering this message himself. " +
+      "I made it for you, booboo 😏💙",
+    src: "assets/day-4.mp4"
   },
   {
     day: 5,
