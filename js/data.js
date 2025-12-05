@@ -61,11 +61,12 @@ const DOORS = [
   },
   {
     day: 5,
-    type: "link",
-    title: "Play a silly game together",
-    note: "Open this at the same time and keep a running score.",
-    href: "https://garticphone.com/",
-    label: "Launch the game →"
+    type: "image",
+    title: "Never forget the ducks 🦆✨",
+    note:
+      "Never forget the ducks… a sign when the heavens opened their doors to us. " +
+      "I don’t think it was an accident. I think the universe was whispering something that day.",
+    src: "assets/day-5.jpg"
   },
   {
     day: 6,
