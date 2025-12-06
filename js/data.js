@@ -70,11 +70,15 @@ const DOORS = [
   },
   {
     day: 6,
-    type: "text",
-    title: "Tiny love letter",
-    note: "Read this, then send me your version with 3 reasons you like us.",
-    text: "i. today i miss your laugh.\nii. i am irrationally obsessed with your face.\niii. one day: same sofa, same mug, zero long distance."
-  }
+    type: "link",
+    title: "The first book I ever made for you 📖💙",
+    note:
+      "I made this for you a long time ago… when I was still figuring out how to put my feelings into words. " +
+      "It was the first time I tried to create something just for you. " +
+      "I wanted you to have it again today — a little piece of our beginning.",
+    href: "assets/princesayelpinguino.pdf",
+    label: "Open the book →"
+  },
 
   // Add days 7–24 in this same format ✨
 ];
