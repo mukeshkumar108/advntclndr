@@ -79,6 +79,17 @@ const DOORS = [
     href: "assets/princesayelpinguino.pdf",
     label: "Open the book →"
   },
+  {
+    day: 7,
+    type: "video",
+    title: "In the beginning… 💌",
+    note:
+      "In the beginning, there was love. And there were words filled with it… little messages that shaped everything that came after. " +
+      "These were some of the moments I never wanted to forget.\n\n" +
+      "P.S. It cuts off early — the system only allowed 10 seconds today. Blame the chaos gremlin. 💙",
+    src: "assets/day-7.mp4"
+  },
+
 
   // Add days 7–24 in this same format ✨
 ];
