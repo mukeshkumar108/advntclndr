@@ -89,7 +89,17 @@ const DOORS = [
       "P.S. It cuts off early — the system only allowed 10 seconds today. Blame the chaos gremlin. 💙",
     src: "assets/day-7.mp4"
   },
-
-
+  {
+    day: 8,
+    type: "image-link",
+    title: "Ever After Garden 🌹✨",
+    note:
+      "When I saw this, I thought of your mum… and of my dad. And of how love never really disappears — it just becomes light.\n\n" +
+      "I made a $20 donation on your behalf, and dedicated a rose for your mum in the Ever After Garden — a public exhibition in London. There she will be shining for all to see.\n\n" +
+      "This one is for her. And for my dad. And for us, and everything that shaped who we are. (just click the image to see the garden if you can't visit it in person)",
+    src: "assets/day-8.jpg",            // your screenshot image
+    href: "https://www.instagram.com/reel/DRfXl7zjXd6/?igsh=bzY3dWt1ajBrbDJp",
+    label: "See the garden →"
+  }
   // Add days 7–24 in this same format ✨
 ];

@@ -133,7 +133,10 @@ function createDoorElement(day) {
   if (!unlocked) {
     button.classList.add("door--locked");
     button.disabled = true;
-    button.setAttribute("aria-label", `Day ${day}, locked until ${day} December`);
+    button.setAttribute(
+      "aria-label",
+      `Day ${day}, locked until ${day} December`
+    );
   } else if (isTodayFlag && !previouslyOpened) {
     button.classList.add("door--today");
     button.setAttribute("aria-label", `Day ${day}, open today`);
@@ -225,6 +228,38 @@ function createContentElement(data) {
       wrapper.appendChild(img);
       return wrapper;
     }
+    case "image-link": {
+      if (!data.src) return null;
+
+      // Make wrapper clickable
+      const link = document.createElement("a");
+      link.href = data.href || "#";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = "image-link-wrapper";
+
+      // The image
+      const img = document.createElement("img");
+      img.src = data.src;
+      img.alt = data.alt || data.title || "Image";
+
+      link.appendChild(img);
+      wrapper.appendChild(link);
+
+      // Optional button under the image
+      if (data.label && data.href) {
+        const linkBtn = document.createElement("a");
+        linkBtn.href = data.href;
+        linkBtn.target = "_blank";
+        linkBtn.rel = "noopener noreferrer";
+        linkBtn.textContent = data.label;
+        linkBtn.className = "link-button";
+        wrapper.appendChild(linkBtn);
+      }
+
+      return wrapper;
+    }
+
     case "audio": {
       if (!data.src) return null;
       const audio = document.createElement("audio");
