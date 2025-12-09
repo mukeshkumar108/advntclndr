@@ -421,6 +421,18 @@ h1 .tag {
   font-style: italic;
 }
 
+.image-link-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.image-link-wrapper {
+  display: block;
+}
+
+
 /* Modal in animation */
 
 @keyframes modalIn {

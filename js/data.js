@@ -100,6 +100,17 @@ const DOORS = [
     src: "assets/day-8.jpg",            // your screenshot image
     href: "https://www.instagram.com/reel/DRfXl7zjXd6/?igsh=bzY3dWt1ajBrbDJp",
     label: "See the garden →"
+  },
+  {
+    day: 9,
+    type: "video",
+    title: "Something Eternal 💫",
+    note:
+      "I believe God put you in my path for a reason. When something is meant to last forever, you treat it differently — you protect it, nurture it, and guard it from the storms.\n\n" +
+      "That’s how I feel about us. I want to grow with you. I want to choose you — every day, in the ways that matter.\n\n" +
+      "One day, I want us to walk into the Celestial Kingdom together… not as two people who tried, but as two people who became something eternal.\n\n" +
+      "I’m not perfect. But I believe in God. I believe in you. And I believe in us. In this life and the next… I choose you.",
+    src: "assets/day-09.mp4"
   }
   // Add days 7–24 in this same format ✨
 ];
