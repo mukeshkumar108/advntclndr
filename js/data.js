@@ -111,6 +111,18 @@ const DOORS = [
       "One day, I want us to walk into the Celestial Kingdom together… not as two people who tried, but as two people who became something eternal.\n\n" +
       "I’m not perfect. But I believe in God. I believe in you. And I believe in us. In this life and the next… I choose you.",
     src: "assets/day-09.mp4"
+  },
+  {
+    day: 10,
+    type: "spotify",
+    title: "Our Playlist 🎧✨",
+    note:
+      "Once upon a time, we used to share music with each other. You’d fall asleep on the phone while I played songs for you… and it feels like a lifetime ago now, but it’s still one of my favourite memories of us.\n\n" +
+      "We made a playlist together too. You added songs. I added songs. And I still listen to it — even now.\n\n" +
+      "I added a few more lately… songs that remind me of you, of us, of moments I never want to forget. Maybe one day you’ll listen to them again and remember the nights you would call me, the prayers, the stories, the music that helped you fall asleep… or the guitar by the fire in Atitlán, or those early days when everything felt new and impossible and magical.\n\n" +
+      "Every song is a little snapshot of us.\n\n" +
+      "If you ever scroll through the playlist and find a song that speaks to you… tell me which one it was. I’d love to know.",
+    embedUrl: "https://open.spotify.com/embed/playlist/5ZOpT14RIAoM7X3B93pBV4?utm_source=generator"
   }
   // Add days 7–24 in this same format ✨
 ];
