@@ -123,6 +123,16 @@ const DOORS = [
       "Every song is a little snapshot of us.\n\n" +
       "If you ever scroll through the playlist and find a song that speaks to you… tell me which one it was. I’d love to know.",
     embedUrl: "https://open.spotify.com/embed/playlist/5ZOpT14RIAoM7X3B93pBV4?utm_source=generator"
-  }
+  },
+  {
+    day: 11,
+    type: "video",
+    title: "Hey There Delilah 🎧",
+    note:
+      "This song has been with me for a long time… but it only really came back into my life when I met you. " +
+      "It’s about a long-distance love and a future together — so of course it made me think of us. " +
+      "I remember playing it for you here in England, and I wanted it to live in our little advent story too.",
+    src: "assets/day-10.mp4"
+  },
   // Add days 7–24 in this same format ✨
 ];
