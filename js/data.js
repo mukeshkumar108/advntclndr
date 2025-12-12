@@ -134,5 +134,15 @@ const DOORS = [
       "I remember playing it for you here in England, and I wanted it to live in our little advent story too.",
     src: "assets/day-10.mp4"
   },
+  {
+    day: 12,
+    type: "audio",
+    title: "Mucho Muchísimo Muchote 🎶",
+    note:
+      "Once upon a time, when I used to say *te amo*, you used to answer back the most ridiculous thing: 'mucho… muchísimoooo… muchote.' I still hear you saying it.\n\n" +
+      "One day I turned that little inside joke into a song. I don’t know if you remember it… but hearing it again made me smile. I hope it makes you smile too.",
+    src: "assets/day-12.mp3"
+  },
+
   // Add days 7–24 in this same format ✨
 ];
