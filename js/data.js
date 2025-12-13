@@ -143,6 +143,15 @@ const DOORS = [
       "One day I turned that little inside joke into a song. I don’t know if you remember it… but hearing it again made me smile. I hope it makes you smile too.",
     src: "assets/day-12.mp3"
   },
-
+  {
+    day: 13,
+    type: "video",
+    title: "Por siempre y para siempre 🤍",
+    note:
+      "From the very beginning, I believed God brought us together. Through temples, through distance, through quiet moments and simple messages — it always felt guided.\n\n" +
+      "One day, I hope to walk with you not just through this life, but toward eternity — growing together, choosing each other, and becoming something deeper than time.\n\n" +
+      "Por siempre y para siempre.",
+    src: "assets/day-13.mp4"
+  }
   // Add days 7–24 in this same format ✨
 ];
