@@ -152,6 +152,15 @@ const DOORS = [
       "One day, I hope to walk with you not just through this life, but toward eternity — growing together, choosing each other, and becoming something deeper than time.\n\n" +
       "Por siempre y para siempre.",
     src: "assets/day-13.mp4"
+  },
+  {
+    day: 14,
+    type: "audio",
+    title: "My Jungle Princess 🌿🎶",
+    note:
+      "Once upon a time, you asked me to sing to you… and I was way too shy.\n\n" +
+      "Now look at me — writing songs, recording songs, even making songs for you. This one’s called *My Jungle Princess*. I don’t know when that happened exactly… but somehow, you turned me into someone brave enough to sing.",
+    src: "assets/My-Jungle-Princess.mp3"
   }
   // Add days 7–24 in this same format ✨
 ];
