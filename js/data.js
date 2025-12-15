@@ -161,6 +161,17 @@ const DOORS = [
       "Once upon a time, you asked me to sing to you… and I was way too shy.\n\n" +
       "Now look at me — writing songs, recording songs, even making songs for you. This one’s called *My Jungle Princess*. I don’t know when that happened exactly… but somehow, you turned me into someone brave enough to sing.",
     src: "assets/My-Jungle-Princess.mp3"
-  }
+  },
+  {
+    day: 15,
+    type: "video",
+    title: "So many firsts 🤍",
+    note:
+      "I remember the first text I ever sent you. The first time I heard your voice. The first night I fell asleep on the phone with you.\n\n" +
+      "I remember the first time I saw you in person — the first hug, the first kiss, the first time I learned the way you smell.\n\n" +
+      "And the first time I woke up next to you.\n\n" +
+      "I’ve had so many firsts with you. Here’s to many more.",
+    src: "assets/day-15.mp4"
+  },
   // Add days 7–24 in this same format ✨
 ];
