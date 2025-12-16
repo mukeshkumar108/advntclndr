@@ -173,5 +173,16 @@ const DOORS = [
       "I’ve had so many firsts with you. Here’s to many more.",
     src: "assets/day-15.mp4"
   },
+  {
+    day: 16,
+    type: "video",
+    title: "Pedro Pedro Pedro 😄",
+    note:
+      "Today something a little different, mi amor. A throwback to the early days — when you shared a song that made me laugh… and I still remember it.\n\n" +
+      "So today, I just hope you smile.\n\n" +
+      "From your Pedro. Forever.",
+    src: "assets/day-16.mp4"
+  }
+
   // Add days 7–24 in this same format ✨
 ];
