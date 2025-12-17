@@ -182,7 +182,14 @@ const DOORS = [
       "So today, I just hope you smile.\n\n" +
       "From your Pedro. Forever.",
     src: "assets/day-16.mp4"
-  }
+  },
+  {
+    day: 17,
+    type: "image",
+    title: "🤍",
+    note: "I saw this and thought of you.",
+    src: "assets/IMG_6102.JPG"
+  },
 
   // Add days 7–24 in this same format ✨
 ];
