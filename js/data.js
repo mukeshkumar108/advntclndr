@@ -190,6 +190,15 @@ const DOORS = [
     note: "I saw this and thought of you.",
     src: "assets/IMG_6102.JPG"
   },
-
+  {
+    day: 18,
+    type: "audio",
+    title: "A bedtime story 🤍",
+    note:
+      "Once upon a time, you trusted me with your nights. You’d let me make up stories for you, and I’d read them until you fell asleep.\n\n" +
+      "It’s been a long time since I’ve done that… but I wanted to leave you one more story. No pressure. No expectations. Just something gentle, from me to you.\n\n" +
+      "And maybe one day, I’ll get to tell you a story again — this time in person.",
+    src: "assets/the-princess-and-gugi-and-3-friends.mp3"
+  },
   // Add days 7–24 in this same format ✨
 ];
