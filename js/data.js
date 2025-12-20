@@ -242,7 +242,19 @@ const DOORS = [
       }
     ]
   },
-  
+  {
+    day: 20,
+    type: "image-reveal",
+    title: "London 🤍",
+    note:
+      "Some moments don’t need to be loud to mean everything.\n\n" +
+      "Take a second… then tap to reveal.",
+    src: "assets/day-20.jpg",
+    buttonLabel: "Reveal 🤍",
+    revealMessage:
+      "I can’t wait to bring you back to London… and to explore so many other places in the world with you."
+  }
+
 
   // Add days 7–24 in this same format ✨
 ];

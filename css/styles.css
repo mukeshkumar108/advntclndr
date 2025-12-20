@@ -432,6 +432,68 @@ h1 .tag {
   display: block;
 }
 
+.reveal {
+  position: relative;
+  margin-top: 0.75rem;
+}
+
+.reveal__img {
+  width: 100%;
+  display: block;
+  transition: filter 0.7s ease, transform 0.7s ease;
+}
+
+.reveal__img.blurred {
+  filter: blur(36px) brightness(0.85) contrast(0.9);
+  transform: scale(1.03);
+}
+
+.reveal__overlayBtn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid #000;
+  background: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 0 0 3px #fff;
+}
+
+/* Optional hover / tap feedback */
+.reveal__overlayBtn:active {
+  transform: scale(0.97);
+}
+
+.reveal__message {
+  margin-top: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+}
+
+.reveal__message.fade-in {
+  animation: revealFade 700ms ease forwards;
+}
+
+@keyframes revealFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================== QUIZ ================== */
+
 .quiz {
   margin-top: 0.75rem;
   border-radius: 12px;

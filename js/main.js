@@ -480,6 +480,45 @@ function createContentElement(data) {
       wrapper.appendChild(quizWrap);
       return wrapper;
     }
+    case "image-reveal": {
+      if (!data.src) return null;
+
+      const container = document.createElement("div");
+      container.className = "reveal";
+
+      const img = document.createElement("img");
+      img.src = data.src;
+      img.alt = data.alt || data.title || "Hidden image";
+      img.className = "reveal__img blurred";
+
+      const overlayBtn = document.createElement("button");
+      overlayBtn.type = "button";
+      overlayBtn.className = "reveal__overlayBtn";
+      overlayBtn.textContent = data.buttonLabel || "Reveal";
+
+      const msg = document.createElement("div");
+      msg.className = "reveal__message";
+      msg.textContent = data.revealMessage || "";
+      msg.hidden = true;
+
+      overlayBtn.addEventListener("click", () => {
+        img.classList.remove("blurred");
+        overlayBtn.remove();
+
+        if (msg.textContent) {
+          msg.hidden = false;
+          msg.classList.add("fade-in");
+        }
+      });
+
+      container.appendChild(img);
+      container.appendChild(overlayBtn);
+      container.appendChild(msg);
+
+      wrapper.appendChild(container);
+      return wrapper;
+    }
+
 
     default:
       return null;
