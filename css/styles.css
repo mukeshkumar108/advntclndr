@@ -432,6 +432,153 @@ h1 .tag {
   display: block;
 }
 
+.quiz {
+  margin-top: 0.75rem;
+  border-radius: 12px;
+  padding: 0.9rem;
+  box-shadow: 0 0 0 2px #000;
+  background: #fff;
+  color: #000;
+}
+
+.quiz__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.quiz__question {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.quiz__choices {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.quiz__choice {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 0.85rem;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quiz__choice:disabled {
+  opacity: 0.9;
+  cursor: default;
+}
+
+.quiz__choice.is-correct {
+  outline: 3px solid #0a0;
+}
+
+.quiz__choice.is-wrong {
+  outline: 3px solid #c00;
+}
+
+.quiz__feedback {
+  margin-top: 0.8rem;
+  font-weight: 800;
+  min-height: 1.4em;
+}
+
+.quiz__feedback.is-correct {
+  color: #0a0;
+}
+
+.quiz__feedback.is-wrong {
+  color: #c00;
+}
+
+.quiz__actions {
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quiz__next {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 2px solid #000;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quiz__next:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.quiz__done {
+  padding: 0.25rem 0;
+}
+
+.quiz__doneTitle {
+  font-size: 1.15rem;
+  font-weight: 900;
+  margin-bottom: 0.4rem;
+}
+
+.quiz__doneText {
+  font-weight: 700;
+  margin-top: 0.35rem;
+}
+
+/* --- QUIZ PIZZAZ --- */
+
+.quiz__feedback.pop {
+  animation: quizPop 220ms ease-out;
+}
+
+@keyframes quizPop {
+  0% { transform: scale(0.98); }
+  60% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+.quiz__choice.bounce {
+  animation: quizBounce 260ms ease-out;
+}
+
+@keyframes quizBounce {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.quiz.shake {
+  animation: quizShake 240ms ease-in-out;
+}
+
+@keyframes quizShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .quiz__feedback.pop,
+  .quiz__choice.bounce,
+  .quiz.shake {
+    animation: none !important;
+  }
+}
+
+
+
 
 /* Modal in animation */
 

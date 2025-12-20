@@ -302,6 +302,185 @@ function createContentElement(data) {
       wrapper.appendChild(video);
       return wrapper;
     }
+    case "quiz": {
+      if (!Array.isArray(data.questions) || data.questions.length === 0) return null;
+
+      const quizWrap = document.createElement("div");
+      quizWrap.className = "quiz";
+
+      let idx = 0;
+      let score = 0;
+      let answered = false;
+
+      const header = document.createElement("div");
+      header.className = "quiz__header";
+
+      const progress = document.createElement("div");
+      progress.className = "quiz__progress";
+
+      const scoreEl = document.createElement("div");
+      scoreEl.className = "quiz__score";
+
+      header.appendChild(progress);
+      header.appendChild(scoreEl);
+
+      const questionEl = document.createElement("div");
+      questionEl.className = "quiz__question";
+
+      const choicesEl = document.createElement("div");
+      choicesEl.className = "quiz__choices";
+
+      const feedback = document.createElement("div");
+      feedback.className = "quiz__feedback";
+      feedback.setAttribute("aria-live", "polite");
+
+      const actions = document.createElement("div");
+      actions.className = "quiz__actions";
+
+      const nextBtn = document.createElement("button");
+      nextBtn.type = "button";
+      nextBtn.className = "quiz__next";
+      nextBtn.textContent = "Next →";
+      nextBtn.disabled = true;
+
+      actions.appendChild(nextBtn);
+
+      quizWrap.appendChild(header);
+      quizWrap.appendChild(questionEl);
+      quizWrap.appendChild(choicesEl);
+      quizWrap.appendChild(feedback);
+      quizWrap.appendChild(actions);
+
+      function render() {
+        const total = data.questions.length;
+        const qObj = data.questions[idx];
+
+        answered = false;
+        nextBtn.disabled = true;
+
+        progress.textContent = `Question ${idx + 1} / ${total}`;
+        scoreEl.textContent = `Score: ${score}/${total}`;
+
+        questionEl.textContent = qObj.q || "";
+
+        feedback.textContent = "";
+        feedback.classList.remove("is-correct", "is-wrong");
+
+        choicesEl.innerHTML = "";
+        const choices = Array.isArray(qObj.choices) ? qObj.choices : [];
+
+        choices.forEach((choiceText, choiceIndex) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "quiz__choice";
+          btn.textContent = choiceText;
+
+          btn.addEventListener("click", () => {
+            if (answered) return;
+            answered = true;
+
+            const correctIdx = Number.isInteger(qObj.answerIndex) ? qObj.answerIndex : -1;
+            const isCorrect = choiceIndex === correctIdx;
+
+            // lock all buttons + mark correct / wrong
+            [...choicesEl.querySelectorAll("button")].forEach((b, i) => {
+              b.disabled = true;
+              if (i === correctIdx) b.classList.add("is-correct");
+              if (i === choiceIndex && !isCorrect) b.classList.add("is-wrong");
+            });
+
+            // feedback animation reset
+            feedback.classList.remove("pop");
+            // force reflow so animation retriggers
+            void feedback.offsetWidth;
+            feedback.classList.add("pop");
+
+            // wrapper shake reset
+            quizWrap.classList.remove("shake");
+            void quizWrap.offsetWidth;
+
+            if (isCorrect) {
+              score++;
+              feedback.classList.add("is-correct");
+              feedback.classList.remove("is-wrong");
+              feedback.textContent = qObj.correctMessage || "Correct 💙";
+
+              // tiny confetti burst on correct
+              triggerConfetti();
+
+              // bounce the tapped button for extra joy
+              btn.classList.add("bounce");
+            } else {
+              feedback.classList.add("is-wrong");
+              feedback.classList.remove("is-correct");
+              const correctText = qObj.choices?.[correctIdx] ?? "the right answer";
+              feedback.textContent = `Almost 😄 Correct answer: ${correctText}`;
+
+              // playful shake on wrong
+              quizWrap.classList.add("shake");
+            }
+
+            const total = data.questions.length;
+            scoreEl.textContent = `Score: ${score}/${total}`;
+
+            nextBtn.disabled = false;
+            nextBtn.focus();
+          });
+
+          choicesEl.appendChild(btn);
+        });
+
+        nextBtn.textContent = idx === total - 1 ? "Finish →" : "Next →";
+      }
+
+      function finish() {
+        const total = data.questions.length;
+        quizWrap.innerHTML = "";
+
+        const done = document.createElement("div");
+        done.className = "quiz__done";
+
+        const h = document.createElement("div");
+        h.className = "quiz__doneTitle";
+        h.textContent = "Done 😌💙";
+
+        const p = document.createElement("div");
+        p.className = "quiz__doneText";
+        p.textContent = `Score: ${score}/${total}. No pressure. Just us.`;
+
+        const n = document.createElement("div");
+        n.className = "quiz__doneText";
+        n.textContent = "Tell me which question made you smile most 😄";
+
+        done.appendChild(h);
+        done.appendChild(p);
+        done.appendChild(n);
+
+        quizWrap.appendChild(done);
+
+        if (score === total) {
+          // big celebration for perfect score
+          triggerConfetti();
+          setTimeout(triggerConfetti, 250);
+          setTimeout(triggerConfetti, 500);
+        }
+      }
+
+      nextBtn.addEventListener("click", () => {
+        if (!answered) return;
+        if (idx < data.questions.length - 1) {
+          idx++;
+          render();
+        } else {
+          finish();
+        }
+      });
+
+      render();
+      wrapper.appendChild(quizWrap);
+      return wrapper;
+    }
+
     default:
       return null;
   }

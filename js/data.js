@@ -200,5 +200,49 @@ const DOORS = [
       "And maybe one day, I’ll get to tell you a story again — this time in person.",
     src: "assets/the-princess-and-gugi-and-3-friends.mp3"
   },
+  {
+    day: 19,
+    type: "quiz",
+    title: "How well do you know us? 💙",
+    note:
+      "No score. No pressure. Just a tiny throwback quiz.\n\n" +
+      "Tap your answers… and at the end, tell me which one made you smile most 😄",
+    questions: [
+      {
+        q: "What is my favourite Disney movie?",
+        choices: ["Aladdin", "The Lion King", "Moana", "Frozen"],
+        answerIndex: 0
+      },
+      {
+        q: "Which artist did you introduce me to first, that I now love?",
+        choices: ["KAROL G", "Shakira", "Rosalía", "Becky G"],
+        answerIndex: 0
+      },
+      {
+        q: "What would I choose over coffee?",
+        choices: ["Tea", "You", "Sleep", "A smoothie"],
+        answerIndex: 1,
+        correctMessage: "Correct. You — always you. Forever you. 😌💙"
+      },
+      {
+        q: "Do you remember how to say “You are the best event designer in all of Guatemala”?",
+        choices: ["I love you", "Good morning", "I miss you", "You’re funny"],
+        answerIndex: 0,
+        correctMessage: "YES 😂 the only translation that matters."
+      },
+      {
+        q: "What’s my favourite version of you?",
+        choices: ["Happy Ashley", "Sleepy Ashley", "Grumpy Ashley", "All of them"],
+        answerIndex: 3
+      },
+      {
+        q: "When you said “Te amo”… what was my ridiculous reply?",
+        choices: ["Mucho muchísimo muchote", "Mi cielo", "Te extraño", "Qué lindo"],
+        answerIndex: 0
+      }
+    ]
+  },
+  
+
   // Add days 7–24 in this same format ✨
 ];
