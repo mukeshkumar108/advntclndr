@@ -253,7 +253,16 @@ const DOORS = [
     buttonLabel: "Reveal 🤍",
     revealMessage:
       "I can’t wait to bring you back to London… and to explore so many other places in the world with you."
+  },
+  {
+    day: 21,
+    type: "video",
+    title: "From your Stitch 💙",
+    note:
+      "You once told me I’m like Stitch… so today, he wanted to give you something.",
+    src: "assets/day-21-vid.mp4"
   }
+
 
 
   // Add days 7–24 in this same format ✨
