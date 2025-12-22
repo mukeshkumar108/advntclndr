@@ -261,9 +261,15 @@ const DOORS = [
     note:
       "You once told me I’m like Stitch… so today, he wanted to give you something.",
     src: "assets/day-21-vid.mp4"
+  },
+  {
+    day: 22,
+    type: "video",
+    title: "So many memories 🤍",
+    note:
+      "Every memory with you matters to me. I want a lifetime of moments like these — with you.\n\n" +
+      "You’re my favourite person, and you make my heart happy.",
+    src: "assets/day-22-vid.mp4"
   }
-
-
-
   // Add days 7–24 in this same format ✨
 ];
