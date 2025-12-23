@@ -270,6 +270,17 @@ const DOORS = [
       "Every memory with you matters to me. I want a lifetime of moments like these — with you.\n\n" +
       "You’re my favourite person, and you make my heart happy.",
     src: "assets/day-22-vid.mp4"
-  }
+  },
+  {
+    day: 23,
+    type: "video",
+    title: "A little dream of us ✨",
+    note:
+      "I wanted to paint a little dream for us. " +
+      "Moments of laughter, closeness, adventure, and magic. " +
+      "This is how being with you feels to me… and I hope you feel it too. 💫",
+    src: "assets/day-23.mp4"
+  },
+
   // Add days 7–24 in this same format ✨
 ];
