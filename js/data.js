@@ -281,6 +281,14 @@ const DOORS = [
       "This is how being with you feels to me… and I hope you feel it too. 💫",
     src: "assets/day-23.mp4"
   },
-
+  {
+    day: 24,
+    type: "video",
+    title: "A little Christmas magic 🎄",
+    note:
+      "For today, I wanted to give something a little different — a small piece of Christmas magic for the kids… and for you too. " +
+      "Thank you for letting me be part of your world. Feliz Navidad. ❤️",
+    src: "assets/santa-ashley.mp4"
+  }
   // Add days 7–24 in this same format ✨
 ];
